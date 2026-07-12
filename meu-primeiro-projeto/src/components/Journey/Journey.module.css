@@ -1,0 +1,95 @@
+ .journey {
+  width: 100%;
+  padding: 120px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f8f7f7d7;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.header {
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.header h2 {
+  color: var(--cor-secundaria);
+  font-size: 2.5rem; 
+  font-weight: 900;
+  text-transform: uppercase;
+  display: block;
+  gap: 0;
+  padding: 0;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.header span {
+  color: var(--cor-destaque);
+}
+
+.header p {
+    width: 100%;
+    font-size: 1.1rem;
+    margin: 0 auto 0;
+}
+
+.timeline {
+    position: relative;
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.svg {
+   display: block;
+    width: 100%;    /* Ele vai ocupar o espaço disponível dentro da max-width */
+    height: auto;
+    overflow: visible; /* IMPORTANTE: Deixe visível para não cortar bordas */
+}
+.svg path {
+    stroke-width: 2;
+    stroke-dasharray: 900; 
+    stroke-dashoffset: 900;
+}
+.card {
+    position:absolute;
+    width:15%;
+    transform:translate(-50%,-50%);
+    border-radius:20px;
+    z-index:2;
+}
+.card h3 {
+  color: var(--cor-secundaria);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center; 
+}
+.card p {
+  color: #666;
+  font-size: 0.8rem;
+  line-height:1;
+  text-align: center;
+}
+.dot{
+    fill: var(--cor-secundaria);
+    transition: .35s;
+}
+.dotText{
+    fill: white;
+    font-size: 13px;
+    font-weight: 700;
+    pointer-events: none;
+    user-select: none;
+}

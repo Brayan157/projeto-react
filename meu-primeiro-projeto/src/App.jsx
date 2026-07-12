@@ -1,17 +1,29 @@
-import './App.css'
+import './App.css';
+import Header from './components/Header'
+import Hero from './components/Hero'
+import About from './components/About'
+import Journey from './components/Journey'
+import Satisfaction from './components/Satisfaction'
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-function App() {
- 
-
-  return (
+export default function App(){
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Duração da animação em milissegundos
+      once: true, // Animação ocorre apenas uma vez
+      offset: 100, // Distância em pixels antes do elemento entrar na tela para iniciar a animação
+    });
+  }, []);
+  return(
     <>
-      <div>
-        <h1> HELLO REACT</h1> 
-        <p className='caption'> Aprendendo React passo a passo</p> 
-        
-      </div>   
+      <Header/>
+      <Hero/>
+      <About/>
+      <Journey/>
+      <Satisfaction/>
     </>
   )
 }
 
-export default App

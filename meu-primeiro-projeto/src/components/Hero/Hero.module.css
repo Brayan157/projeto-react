@@ -1,0 +1,105 @@
+:root{
+    --color-hero-conteiner: #121214;
+    --cor-primaria: #0A2540;
+    --cor-secundaria: #1E3A5F;
+    --cor-destaque: #D4A017;
+    --cor-destaque-hover: #B8860B;
+    --cor-texto: #374151;
+    --cor-borda: #E2E8F0;
+}
+.hero{
+    min-height:100vh;
+    background-image: url(image/textura.png);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    width: 100%;
+}
+.heroConteiner{
+    width:min(1300px,92%);
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 0px;
+}
+.heroText{
+    max-width: 600px;
+    color: var(--cor-primaria);
+}
+.heroText h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.heroText p{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--cor-texto);
+}
+.heroText .buttonDiscover{
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--cor-destaque);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+.heroText .buttonDiscover:hover{
+    background-color: var(--cor-destaque-hover);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.heroImage{
+    max-width: 600px;
+    width: 100%;
+}
+.heroImage img{
+    width: 100%;
+    height: auto;
+    animation:float 6s ease-in-out infinite;
+} 
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* fazer a imagem ir para trás do texto quando a tela for pequena */
+@media (max-width: 900px) {
+    
+    .heroImage{
+        position: absolute;
+        order: -1;
+        transform: translateY(-50%);
+        z-index: 0;
+        pointer-events: none;
+        right: 0;
+        top: 50%;
+
+    }
+    
+    .heroImage img{
+        width: 100%;
+        height: auto;
+        opacity: 0.5;
+        /* colocar a imagem atás do texto */
+        
+    }
+    .heroText{
+        position: relative;
+        z-index: 2;
+    }
+    
+}
+

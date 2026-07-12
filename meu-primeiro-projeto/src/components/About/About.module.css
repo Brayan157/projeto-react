@@ -1,0 +1,56 @@
+:root{
+    
+    --background-image: url('/image/host.jpg');
+}
+.about{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color: #ffffff;
+    padding-bottom: 4rem;
+}
+.aboutContent{
+    width:min(1350px,92%);
+    margin:0 auto;
+    margin-top: 4rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.aboutText{
+    text-align:left;
+    justify-content:center;
+    padding: 2rem;
+    width: 100%;
+}
+.aboutText h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    color: var(--cor-secundaria);
+}
+.aboutText h2 span{
+    color: var(--cor-destaque);
+}
+.aboutText h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--cor-destaque);
+}
+.aboutText div {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    /* diminuir o espaçamento  entre os parágrafos */
+    gap: 0rem;
+}
+.aboutText p{
+    font-size: 1rem;
+    margin-bottom: 0rem;
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
+/* colocar um card um do lado do outro */
+
+

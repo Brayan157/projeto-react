@@ -1,0 +1,179 @@
+.satisfaction {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-image: url("/image/satisfaction.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+}
+.satisfactionContent {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.satisfactionHeader {
+    margin-top: 40px;
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+}
+.satisfactionHeader h2 {
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    width: 29%;
+}
+.satisfactionHeader span {
+    color: var(--cor-destaque);
+}
+.satisfactionCards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 65%;
+    gap: 20px;
+}
+.satisfactionCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    height: 55vh;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.3s ease;
+}
+.satisfactionCard:hover {
+    transform: translateY(-5px);
+}
+.satisfactionCard::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--cor-primaria) 25%,
+        var(--cor-secundaria) 50%,
+        var(--cor-destaque) 75%,
+        transparent 100%
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+
+
+    transform: translateX(-110%);
+    transition: transform .8s ease;
+}
+
+.satisfactionCard:hover::before{
+    transform: translateX(0);
+}
+.satisfactionCardHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.satisfactionCardImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.satisfactionCardUser{
+    color: #ccc;
+    font-size: 28px;
+}
+.satisfactionCardInfo{
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+.satisfactionCardInfo h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+.satisfactionCardInfo cite {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+.satisfactionCardInfo p {
+    font-size: 0.9rem;
+    color: var(--cor-secundaria);
+}
+.satisfactionCardDescription {
+    font-size: 0.95rem;
+    text-align: normal;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.satisfactionStars{
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    margin: 12px 0 0px;
+    font-size: 1.2rem;
+}
+
+.starFilled{
+    color: #D4A017;
+}
+
+.starEmpty{
+    color: #d5d5d5;
+}
+.satisfactionCard{
+    animation: fadeCard .6s ease;
+}
+
+@keyframes fadeCard{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+@media (max-width: 1300px) {
+    .satisfactionContent {
+        width: 100%;
+    }
+    .satisfactionHeader h2 {
+        width: 100%;
+        text-align: center;
+    }
+    .satisfactionCards {
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+    }
+
+}

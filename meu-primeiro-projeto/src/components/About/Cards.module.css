@@ -1,0 +1,193 @@
+
+.cards{
+    display:flex;
+    width: 100%;
+    height: 500px;
+    transition: all .8s cubic-bezier(.22,1,.36,1);
+    gap: 1rem;
+}
+.card{
+    margin: 0 0 0 0;
+    position:relative;
+    border-radius: 20px;
+    overflow:hidden;
+    cursor:pointer;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1;
+    min-width: 0;
+}
+.overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    z-index: 2;
+    color: #ffffff;
+    z-index:2;
+}
+.overlay h3{
+    font-size:1.4rem;
+    font-weight:700;
+    margin-top:15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 
+                 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0 !important;
+
+}
+.overlay p{
+    font-size:.95rem;
+    line-height:1.5;
+    width: 80%;
+     color: rgba(255, 255, 255, 0.9); 
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    margin-top: 0 !important;
+}
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        transparent 25%,
+        rgba(0,0,0,.75)
+    );
+    z-index:0;
+}
+/* ===========================
+   MOBILE
+=========================== */
+.sliderContainer {
+    position: relative;
+    width: 100%;
+}
+.cardsMobile{
+    width:70%;
+    overflow:visible;
+    padding-bottom:50px;
+    cursor:grab;
+}
+.cardsMobile:active{
+    cursor:grabbing;
+}
+.cardMobile{
+    position:relative;
+    height:420px;
+    border-radius:24px;
+    overflow:hidden;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cardMobile::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+         to bottom,
+        transparent 30%,
+        rgba(0, 0, 0, 0.4) 60%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+    z-index:0;
+}
+.overlayMobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Garante que o texto comece de baixo */
+    height: 90%;
+    padding: 20px;
+    z-index: 2;
+    color:#ffffff;
+    width: 90%;
+}
+.overlayMobile h3{
+    font-size:1.3rem;
+    font-weight:700;
+    margin:0;
+    transition: transform 0.4s ease;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.6), 
+        0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    
+}
+.overlayMobile p{
+    font-size:.9rem;
+    margin-top: 10px;
+    line-height: 0.95rem;
+    color: rgba(255, 255, 255, 0.9); 
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    z-index: 1;       
+}
+.swiperControles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+    position: relative;
+    z-index: 99; 
+}
+/* 3. QUANDO O CARD ESTIVER EM DESTAQUE (No centro) */
+/* Usamos :global para capturar a classe que o Swiper injeta no slide ativo */
+:global(.swiper-slide-active) .overlayMobile p {
+    opacity: 1;             /* Torna a descrição visível */
+    max-height: 150px;      /* Expande a altura para mostrar o texto (ajuste se seu texto for muito longo) */
+    margin-top: 10px;
+}
+.btnPrev, 
+.btnNext {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+.btnPrev:hover,
+.btnNext:hover {
+    background: var(--cor-secundaria);
+    transform: scale(1.1);
+    color: var(--cor-borda);
+}
+.btnPrev:active, 
+.btnNext:active {
+    transform: scale(0.85);
+    background: var(--cor-primaria);
+}
+.paginacao {
+    width: auto !important;
+    display: flex;
+    gap: 8px;
+}
+/* Modificadores das bolinhas nativas do Swiper */
+.paginacao :global(.swiper-pagination-bullet) {
+    background: #ccc !important;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    margin: 0 !important;
+    cursor: pointer;
+    transition: width 0.3s ease, border-radius 0.3s ease, background-color 0.3s ease;
+}
+
+.paginacao :global(.swiper-pagination-bullet-active) {
+    background: var(--cor-secundaria) !important;
+    width: 30px;                    
+    border-radius: 5px;
+}

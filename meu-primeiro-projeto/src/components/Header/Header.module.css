@@ -1,0 +1,129 @@
+:root{
+    --color-text:#0A2540;
+    --color-text2:#D4A017;
+}
+
+.header{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+header div{
+    width:min(1350px,92%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header div span{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.header div nav{
+    text-transform: uppercase;
+    
+}
+.header div nav a{
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    color:var(--color-text);
+    transition: color 0.2s;
+}
+.header div nav a:hover{
+    color: var(--color-text2);
+}
+
+.menuButton{
+    display:none;
+}
+
+@media (max-width:960px){
+
+    .desktopMenu{
+        display:none;
+    }
+
+    .menuButton{
+        display:flex;
+        background:none;
+        border:none;
+        font-size:2rem;
+        color:var(--color-text);
+        cursor:pointer;
+    }
+}
+.mobileMenu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-width: 80vw;
+    height: 100vh;
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    z-index: 1000;
+}
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 999;
+}
+.mobileMenu a{
+    text-transform: uppercase;
+    text-decoration:none;
+    color:var(--color-text);
+    font-size:1.1rem;
+    padding:1rem 0;
+    border-bottom:1px solid #ccc;
+}
+.mobileMenu a:hover{
+    color: var(--color-text2);
+}
+.mobileMenu a:active{
+    color: var(--color-text2);
+}
+.close{
+    background:none;
+    border:none;
+    font-size:2rem;
+    color:var(--color-text);
+    cursor:pointer; 
+    line-height: 0;
+}
+.close:hover{
+    color: var(--color-text2);
+}
+.close:active{
+    color: var(--cor-destaque-hover);
+}
+.close svg{
+    width:100%;
+    height:100%;
+    text-align:center;
+    align-items:center;
+}
+
+.logoMobile{
+    font-weight: bold;
+    font-size: 1.5rem;  
+    padding:0;
+    line-height: 0;
+}
+.menuHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #ccc;
+}
+.menuHeader a{
+    border:none;
+}
+a{
+    text-decoration:none;
+    color:var(--color-text);
+}
