@@ -163,6 +163,10 @@
 
 }
 @media (max-width: 1300px) {
+    .satisfactionCards {
+        flex-direction: column;
+        width: 100%;
+    }
     .satisfactionContent {
         width: 100%;
     }

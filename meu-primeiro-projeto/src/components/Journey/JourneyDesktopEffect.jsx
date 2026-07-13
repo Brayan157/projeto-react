@@ -35,8 +35,10 @@ export default function JourneyDesktopEffect() {
                 scrollTrigger: {
                     trigger: journeyRef.current,
                     start: "top 20%",
-                    end: "bottom 100%",
+                    end: "+=3000",
                     scrub: 1,
+                    pin: true,
+
                 }
             });
         }

@@ -20,52 +20,52 @@ export default function Satisfaction() {
 
     useEffect(() => {
 
-    const handleResize = () => {
-        setIsMobile(window.innerWidth <= 1300);
-    };
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 1300);
+        };
 
-    window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize);
 
-    return () => {
-        window.removeEventListener("resize", handleResize);
-    };
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
 
-}, []);
-useEffect(() => {
+    }, []);
+    useEffect(() => {
 
-    const quantidade = isMobile ? 1 : 2;
+        const quantidade = isMobile ? 1 : 2;
 
-    // gera os primeiros cards
-    setCards(shuffle(service).slice(0, quantidade));
+        // gera os primeiros cards
+        setCards(shuffle(service).slice(0, quantidade));
 
-    const interval = setInterval(() => {
+        const interval = setInterval(() => {
 
-        setCards(current => {
+            setCards(current => {
 
-            const novos = [...current];
+                const novos = [...current];
 
-            const indiceTroca = Math.floor(Math.random() * quantidade);
+                const indiceTroca = Math.floor(Math.random() * quantidade);
 
-            const disponiveis = service.filter(
-                s => !novos.some(card => card.id === s.id)
-            );
+                const disponiveis = service.filter(
+                    s => !novos.some(card => card.id === s.id)
+                );
 
-            if (!disponiveis.length) return novos;
+                if (!disponiveis.length) return novos;
 
-            const novoCard =
-                disponiveis[Math.floor(Math.random() * disponiveis.length)];
+                const novoCard =
+                    disponiveis[Math.floor(Math.random() * disponiveis.length)];
 
-            novos[indiceTroca] = novoCard;
+                novos[indiceTroca] = novoCard;
 
-            return [...novos];
+                return [...novos];
 
-        });
+            });
 
-    }, 7000);
+        }, 7000);
 
-    return () => clearInterval(interval);
+        return () => clearInterval(interval);
 
-}, [isMobile]);
+    }, [isMobile]);
     return (
         <>
         <section className={style.satisfaction}>

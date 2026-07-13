@@ -65,10 +65,11 @@
 .sliderContainer {
     position: relative;
     width: 100%;
+    overflow: hidden;
 }
 .cardsMobile{
-    width:70%;
-    overflow:visible;
+    width:100%;
+    overflow:hidden;
     padding-bottom:50px;
     cursor:grab;
 }
@@ -106,7 +107,8 @@
     padding: 20px;
     z-index: 2;
     color:#ffffff;
-    width: 90%;
+    width: 100%;
+    box-sizing: border-box;
 }
 .overlayMobile h3{
     font-size:1.3rem;

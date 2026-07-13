@@ -1,4 +1,5 @@
 import styles from './Hero.module.css';
+import {motion} from 'framer-motion'
 
 
 export default function Hero(){
@@ -7,23 +8,54 @@ export default function Hero(){
             <section className={styles.hero}>
                 <div className={styles.heroConteiner}>
                     <div className={styles.heroText}>
-                        <h1>
+                        <motion.h1
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
                             Tudo o que seu negócio precisa, com eficiência e simplicidade!
-                        </h1>
-                        <p>
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
                             A HØST é mais do que um fornecedor - 
                             somos o parceiro estrategico que te entende, 
                             direciona e conecta seu negocioás melhores soluções em equipamentos, serviços e gestão. <br/>
                             <span>Aqui você resolve tudo em um só lugar.</span>
-                        </p>
+                        </motion.p>
                         
-                        <div className={styles.socialLinks}>
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                            className={styles.socialLinks}
+                        >
                             <a href="#" className={styles.buttonDiscover}>Conheça o HUB HØST</a>
-                        </div>
+                        </motion.div>
                     </div>
-                    <div className={styles.heroImage}>
+                    <motion.div 
+                        initial={{
+                            opacity:0,
+                            scale:.65,
+                            rotate:35
+                        }}
+
+                        animate={{
+                            opacity:1,
+                            scale:1,
+                            rotate:0
+                        }}
+
+                        transition={{
+                            duration:1.2,
+                            ease:"easeOut"
+                        }}
+                        className={styles.heroImage}
+                    >
                         <img src="/image/compass.png" alt="" />
-                    </div>
+                    </motion.div>
                 </div>
             </section>
             

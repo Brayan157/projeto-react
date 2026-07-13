@@ -1,0 +1,134 @@
+.contactContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(0,0,0,.50);
+    box-sizing: border-box;
+}
+.contactSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background-image: url(image/contactBack.png);
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    background-repeat: no-repeat;
+}
+.contactContent{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 80vh;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,.15) 20%,
+        rgba(0,0,0,.30) 55%,
+        rgba(0,0,0,.50) 100%
+    );
+}
+.contactContent h1{
+    width: 50%;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.contactContent h3{
+    width: 55%;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.contactContent h3 span{
+    font-weight: 900;
+}
+.contactButton{
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background-color: var(--cor-destaque);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+.contactButton:hover{
+    background-color: var(--cor-destaque-hover);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width:768px){
+
+    .contactSection{
+        height: 60vh;
+        min-height: 500px;
+
+        background-position: 25% center;
+    }
+
+    .contactContainer{
+        width:100%;
+        height:100%;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        padding:30px;
+
+        background:rgba(8,15,25,.58);
+    }
+
+    .contactContent{
+        width:100%;
+        max-width:420px;
+
+        height:auto;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        padding:0;
+
+        text-align:center;
+
+        background:none;
+    }
+
+    .contactContent h1{
+        font-size:2rem;
+        line-height:1.1;
+        margin-bottom:20px;
+    }
+
+    .contactContent h3{
+        font-size:1rem;
+        line-height:1.6;
+        font-weight:400;
+        margin-bottom:35px;
+    }
+
+    .contactButton{
+        width:100%;
+        max-width:320px;
+        box-sizing:border-box;
+        font-size:1rem;
+        align-items:center;
+        text-align:center;
+        justify-content:center;
+        padding:20;
+    }
+
+}
